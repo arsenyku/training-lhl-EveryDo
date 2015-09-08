@@ -6,13 +6,14 @@
 //  Copyright (c) 2015 asu. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "EDDetailViewController.h"
+#import "EDTodo.h"
 
-@interface DetailViewController ()
-
+@interface EDDetailViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *completeByLabel;
 @end
 
-@implementation DetailViewController
+@implementation EDDetailViewController
 
 #pragma mark - Managing the detail item
 
@@ -28,7 +29,8 @@
 - (void)configureView {
     // Update the user interface for the detail item.
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        self.detailDescriptionLabel.text = self.detailItem.title;
+        self.completeByLabel.text = [ NSString stringWithFormat:@"Complete by: %@",[self.detailItem.completeBy description] ];
     }
 }
 

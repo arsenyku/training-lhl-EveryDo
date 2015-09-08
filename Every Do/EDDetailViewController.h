@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EDTodo.h"
 
-@interface DetailViewController : UIViewController
+@interface EDDetailViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) EDTodo *detailItem;
+//@property (strong, nonatomic) EDTodo *todoItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
 @end

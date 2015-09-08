@@ -6,15 +6,17 @@
 //  Copyright (c) 2015 asu. All rights reserved.
 //
 
-#import "MasterViewController.h"
-#import "DetailViewController.h"
+#import "EDToDoListViewController.h"
+#import "EDDetailViewController.h"
+#import "EDTodo.h"
 
-@interface MasterViewController ()
+@interface EDToDoListViewController ()
 
-@property NSMutableArray *objects;
+@property (nonatomic) NSMutableArray *toDoList;
+
 @end
 
-@implementation MasterViewController
+@implementation EDToDoListViewController
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -27,6 +29,14 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
+    for (int i=0; i < 5; i++){
+        EDTodo *todo = [EDTodo new];
+        todo.title = [NSString stringWithFormat:@"Task #%d", i];
+        
+        [self insertNewObject:todo];
+    }
+        
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,10 +45,10 @@
 }
 
 - (void)insertNewObject:(id)sender {
-    if (!self.objects) {
-        self.objects = [[NSMutableArray alloc] init];
+    if (!self.toDoList) {
+        self.toDoList = [[NSMutableArray alloc] init];
     }
-    [self.objects insertObject:[NSDate date] atIndex:0];
+    [self.toDoList insertObject:sender atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
@@ -48,7 +58,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = self.objects[indexPath.row];
+        EDTodo *object = self.toDoList[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
     }
 }
@@ -60,14 +70,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.objects.count;
+    return self.toDoList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDate *object = self.objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    EDTodo *todo = self.toDoList[indexPath.row];
+    cell.textLabel.text = todo.title;
     return cell;
 }
 
@@ -78,7 +88,7 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.objects removeObjectAtIndex:indexPath.row];
+        [self.toDoList removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.

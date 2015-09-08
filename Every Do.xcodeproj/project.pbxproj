@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		1217CB271B9F5B7F002E98F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1217CB261B9F5B7F002E98F2 /* main.m */; };
 		1217CB2A1B9F5B7F002E98F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1217CB291B9F5B7F002E98F2 /* AppDelegate.m */; };
-		1217CB2D1B9F5B7F002E98F2 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1217CB2C1B9F5B7F002E98F2 /* MasterViewController.m */; };
-		1217CB301B9F5B7F002E98F2 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1217CB2F1B9F5B7F002E98F2 /* DetailViewController.m */; };
+		1217CB2D1B9F5B7F002E98F2 /* EDToDoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1217CB2C1B9F5B7F002E98F2 /* EDToDoListViewController.m */; };
+		1217CB301B9F5B7F002E98F2 /* EDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1217CB2F1B9F5B7F002E98F2 /* EDDetailViewController.m */; };
 		1217CB331B9F5B7F002E98F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1217CB311B9F5B7F002E98F2 /* Main.storyboard */; };
 		1217CB351B9F5B7F002E98F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1217CB341B9F5B7F002E98F2 /* Images.xcassets */; };
 		1217CB381B9F5B7F002E98F2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1217CB361B9F5B7F002E98F2 /* LaunchScreen.xib */; };
 		1217CB441B9F5B7F002E98F2 /* Every_DoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1217CB431B9F5B7F002E98F2 /* Every_DoTests.m */; };
+		1217CB4F1B9F5C7B002E98F2 /* EDTodo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1217CB4E1B9F5C7B002E98F2 /* EDTodo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,16 +34,18 @@
 		1217CB261B9F5B7F002E98F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1217CB281B9F5B7F002E98F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1217CB291B9F5B7F002E98F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1217CB2B1B9F5B7F002E98F2 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		1217CB2C1B9F5B7F002E98F2 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		1217CB2E1B9F5B7F002E98F2 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		1217CB2F1B9F5B7F002E98F2 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		1217CB2B1B9F5B7F002E98F2 /* EDToDoListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDToDoListViewController.h; sourceTree = "<group>"; };
+		1217CB2C1B9F5B7F002E98F2 /* EDToDoListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EDToDoListViewController.m; sourceTree = "<group>"; };
+		1217CB2E1B9F5B7F002E98F2 /* EDDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDDetailViewController.h; sourceTree = "<group>"; };
+		1217CB2F1B9F5B7F002E98F2 /* EDDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EDDetailViewController.m; sourceTree = "<group>"; };
 		1217CB321B9F5B7F002E98F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1217CB341B9F5B7F002E98F2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1217CB371B9F5B7F002E98F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1217CB3D1B9F5B7F002E98F2 /* Every DoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Every DoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1217CB421B9F5B7F002E98F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1217CB431B9F5B7F002E98F2 /* Every_DoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Every_DoTests.m; sourceTree = "<group>"; };
+		1217CB4D1B9F5C7B002E98F2 /* EDTodo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDTodo.h; sourceTree = "<group>"; };
+		1217CB4E1B9F5C7B002E98F2 /* EDTodo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDTodo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,10 +89,12 @@
 			children = (
 				1217CB281B9F5B7F002E98F2 /* AppDelegate.h */,
 				1217CB291B9F5B7F002E98F2 /* AppDelegate.m */,
-				1217CB2B1B9F5B7F002E98F2 /* MasterViewController.h */,
-				1217CB2C1B9F5B7F002E98F2 /* MasterViewController.m */,
-				1217CB2E1B9F5B7F002E98F2 /* DetailViewController.h */,
-				1217CB2F1B9F5B7F002E98F2 /* DetailViewController.m */,
+				1217CB2B1B9F5B7F002E98F2 /* EDToDoListViewController.h */,
+				1217CB2C1B9F5B7F002E98F2 /* EDToDoListViewController.m */,
+				1217CB2E1B9F5B7F002E98F2 /* EDDetailViewController.h */,
+				1217CB2F1B9F5B7F002E98F2 /* EDDetailViewController.m */,
+				1217CB4D1B9F5C7B002E98F2 /* EDTodo.h */,
+				1217CB4E1B9F5C7B002E98F2 /* EDTodo.m */,
 				1217CB311B9F5B7F002E98F2 /* Main.storyboard */,
 				1217CB341B9F5B7F002E98F2 /* Images.xcassets */,
 				1217CB361B9F5B7F002E98F2 /* LaunchScreen.xib */,
@@ -224,10 +229,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1217CB4F1B9F5C7B002E98F2 /* EDTodo.m in Sources */,
 				1217CB2A1B9F5B7F002E98F2 /* AppDelegate.m in Sources */,
-				1217CB2D1B9F5B7F002E98F2 /* MasterViewController.m in Sources */,
+				1217CB2D1B9F5B7F002E98F2 /* EDToDoListViewController.m in Sources */,
 				1217CB271B9F5B7F002E98F2 /* main.m in Sources */,
-				1217CB301B9F5B7F002E98F2 /* DetailViewController.m in Sources */,
+				1217CB301B9F5B7F002E98F2 /* EDDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
