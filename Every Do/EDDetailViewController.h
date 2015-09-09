@@ -12,7 +12,6 @@
 @interface EDDetailViewController : UIViewController
 
 @property (strong, nonatomic) EDTodo *detailItem;
-//@property (strong, nonatomic) EDTodo *todoItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
 @end

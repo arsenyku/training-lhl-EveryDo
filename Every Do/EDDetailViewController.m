@@ -8,6 +8,7 @@
 
 #import "EDDetailViewController.h"
 #import "EDTodo.h"
+#import "NSDate+format.h"
 
 @interface EDDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *completeByLabel;
@@ -30,9 +31,11 @@
     // Update the user interface for the detail item.
     if (self.detailItem) {
         self.detailDescriptionLabel.text = self.detailItem.title;
-        self.completeByLabel.text = [ NSString stringWithFormat:@"Complete by: %@",[self.detailItem.completeBy description] ];
+        self.completeByLabel.text = [ NSString stringWithFormat:@"Complete by: %@",[self.detailItem.completeBy dateStringWithFormat:@"dd-MMM-YYYY"] ];
     }
 }
+
+#pragma mark - lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,4 +48,6 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+#pragma mark
 @end

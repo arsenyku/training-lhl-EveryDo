@@ -8,16 +8,20 @@
 
 #import "EDToDoListViewController.h"
 #import "EDDetailViewController.h"
+#import "EDNewToDoViewController.h"
+#import "EDToDoCellView.h"
 #import "EDTodo.h"
+#import "NSDate+format.h"
 
-@interface EDToDoListViewController ()
+@interface EDToDoListViewController () <ToDoItemDelegate>
+
 
 @property (nonatomic) NSMutableArray *toDoList;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
 
 @end
 
 @implementation EDToDoListViewController
-
 - (void)awakeFromNib {
     [super awakeFromNib];
 }
@@ -26,15 +30,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    
+    NSArray *stuffToDo = @[ @"cook dinner", @"watch movie", @"do laundry", @"buy milk", @"feed dog" ];
     
     for (int i=0; i < 5; i++){
         EDTodo *todo = [EDTodo new];
-        todo.title = [NSString stringWithFormat:@"Task #%d", i];
+        todo.title = stuffToDo[i];//[NSString stringWithFormat:@"Task #%d", i];
         
-        [self insertNewObject:todo];
+        [self insertNewTodo:todo];
     }
         
 }
@@ -44,14 +47,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender {
-    if (!self.toDoList) {
-        self.toDoList = [[NSMutableArray alloc] init];
-    }
-    [self.toDoList insertObject:sender atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+#pragma mark - control events
+
+- (IBAction)newTodo:(UIBarButtonItem*)sender {
+    [self performSegueWithIdentifier:@"newTodo" sender:self];
 }
+
 
 #pragma mark - Segues
 
@@ -60,7 +61,11 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         EDTodo *object = self.toDoList[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
+    } else if ([[segue identifier] isEqualToString:@"newTodo"]) {
+        ((EDNewToDoViewController*)segue.destinationViewController).delegate = self;
+    	
     }
+    
 }
 
 #pragma mark - Table View
@@ -74,10 +79,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    EDToDoCellView *cell = [tableView dequeueReusableCellWithIdentifier:@"TodoCell" forIndexPath:indexPath];
 
     EDTodo *todo = self.toDoList[indexPath.row];
-    cell.textLabel.text = todo.title;
+    [cell setContentWithTitle:todo.title sortTitle:[NSString stringWithFormat:@"Complete by: %@", [todo.completeBy dateStringWithFormat:@"dd-MMM-YYYY"]]];
     return cell;
 }
 
@@ -94,5 +99,24 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
 }
+
+#pragma mark - <ToDoItemDelegate>
+
+-(void)receiveToDoItem:(EDTodo *)item{
+    [self insertNewTodo:item];
+}
+
+#pragma mark - private
+
+- (void)insertNewTodo:(EDTodo*)sender {
+    if (!self.toDoList) {
+        self.toDoList = [[NSMutableArray alloc] init];
+    }
+    [self.toDoList insertObject:sender atIndex:0];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+
 
 @end

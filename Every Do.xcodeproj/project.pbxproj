@@ -16,6 +16,10 @@
 		1217CB381B9F5B7F002E98F2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1217CB361B9F5B7F002E98F2 /* LaunchScreen.xib */; };
 		1217CB441B9F5B7F002E98F2 /* Every_DoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1217CB431B9F5B7F002E98F2 /* Every_DoTests.m */; };
 		1217CB4F1B9F5C7B002E98F2 /* EDTodo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1217CB4E1B9F5C7B002E98F2 /* EDTodo.m */; };
+		1217CB521B9F73D9002E98F2 /* EDToDoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1217CB511B9F73D9002E98F2 /* EDToDoCellView.m */; };
+		1217CB551B9F7E8E002E98F2 /* NSDate+format.m in Sources */ = {isa = PBXBuildFile; fileRef = 1217CB541B9F7E8E002E98F2 /* NSDate+format.m */; };
+		1217CB901B9FA4BB002E98F2 /* EDNewToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1217CB8F1B9FA4BB002E98F2 /* EDNewToDoViewController.m */; };
+		1217CB931B9FF1BB002E98F2 /* UITextView+extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1217CB921B9FF1BB002E98F2 /* UITextView+extensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,14 @@
 		1217CB431B9F5B7F002E98F2 /* Every_DoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Every_DoTests.m; sourceTree = "<group>"; };
 		1217CB4D1B9F5C7B002E98F2 /* EDTodo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDTodo.h; sourceTree = "<group>"; };
 		1217CB4E1B9F5C7B002E98F2 /* EDTodo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDTodo.m; sourceTree = "<group>"; };
+		1217CB501B9F73D9002E98F2 /* EDToDoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDToDoCellView.h; sourceTree = "<group>"; };
+		1217CB511B9F73D9002E98F2 /* EDToDoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDToDoCellView.m; sourceTree = "<group>"; };
+		1217CB531B9F7E8E002E98F2 /* NSDate+format.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+format.h"; sourceTree = "<group>"; };
+		1217CB541B9F7E8E002E98F2 /* NSDate+format.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+format.m"; sourceTree = "<group>"; };
+		1217CB8E1B9FA4BB002E98F2 /* EDNewToDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDNewToDoViewController.h; sourceTree = "<group>"; };
+		1217CB8F1B9FA4BB002E98F2 /* EDNewToDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EDNewToDoViewController.m; sourceTree = "<group>"; };
+		1217CB911B9FF1BB002E98F2 /* UITextView+extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+extensions.h"; sourceTree = "<group>"; };
+		1217CB921B9FF1BB002E98F2 /* UITextView+extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+extensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,12 +101,20 @@
 			children = (
 				1217CB281B9F5B7F002E98F2 /* AppDelegate.h */,
 				1217CB291B9F5B7F002E98F2 /* AppDelegate.m */,
+				1217CB501B9F73D9002E98F2 /* EDToDoCellView.h */,
+				1217CB511B9F73D9002E98F2 /* EDToDoCellView.m */,
 				1217CB2B1B9F5B7F002E98F2 /* EDToDoListViewController.h */,
 				1217CB2C1B9F5B7F002E98F2 /* EDToDoListViewController.m */,
 				1217CB2E1B9F5B7F002E98F2 /* EDDetailViewController.h */,
 				1217CB2F1B9F5B7F002E98F2 /* EDDetailViewController.m */,
+				1217CB8E1B9FA4BB002E98F2 /* EDNewToDoViewController.h */,
+				1217CB8F1B9FA4BB002E98F2 /* EDNewToDoViewController.m */,
 				1217CB4D1B9F5C7B002E98F2 /* EDTodo.h */,
 				1217CB4E1B9F5C7B002E98F2 /* EDTodo.m */,
+				1217CB531B9F7E8E002E98F2 /* NSDate+format.h */,
+				1217CB541B9F7E8E002E98F2 /* NSDate+format.m */,
+				1217CB911B9FF1BB002E98F2 /* UITextView+extensions.h */,
+				1217CB921B9FF1BB002E98F2 /* UITextView+extensions.m */,
 				1217CB311B9F5B7F002E98F2 /* Main.storyboard */,
 				1217CB341B9F5B7F002E98F2 /* Images.xcassets */,
 				1217CB361B9F5B7F002E98F2 /* LaunchScreen.xib */,
@@ -233,7 +253,11 @@
 				1217CB2A1B9F5B7F002E98F2 /* AppDelegate.m in Sources */,
 				1217CB2D1B9F5B7F002E98F2 /* EDToDoListViewController.m in Sources */,
 				1217CB271B9F5B7F002E98F2 /* main.m in Sources */,
+				1217CB901B9FA4BB002E98F2 /* EDNewToDoViewController.m in Sources */,
 				1217CB301B9F5B7F002E98F2 /* EDDetailViewController.m in Sources */,
+				1217CB931B9FF1BB002E98F2 /* UITextView+extensions.m in Sources */,
+				1217CB551B9F7E8E002E98F2 /* NSDate+format.m in Sources */,
+				1217CB521B9F73D9002E98F2 /* EDToDoCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +452,7 @@
 				1217CB491B9F5B7F002E98F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1217CB4A1B9F5B7F002E98F2 /* Build configuration list for PBXNativeTarget "Every DoTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +461,7 @@
 				1217CB4C1B9F5B7F002E98F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
